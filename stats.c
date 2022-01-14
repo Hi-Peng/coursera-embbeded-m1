@@ -55,6 +55,13 @@ void print_array(char data[], int size){
     printf("\n=========================\n");
 }
 
+void print_statistic(int min, int max, int mean, int med){
+    printf("Minimium of the dataset: %d\n", min);
+    printf("Maximum of the dataset: %d\n", max);
+    printf("Mean of the dataset: %d\n", mean);
+    printf("Median of the dataset: %d\n", med);
+}
+
 int find_mean(char data[], int size){
     int mean;
     mean = 0;
@@ -73,3 +80,17 @@ int find_median(char data[], int size){
     else
         return (data[(size-1)/2]-data[(size+1)/2])/2;
 }
+
+int find_minimum(char data[], int size){
+    
+}
+
+int find_maximum(char data[], int size){
+
+}
+
+int sort_array(char data[], int size){
+    
+}
+
+
