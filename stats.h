@@ -30,7 +30,7 @@
  *
  * @return Return the value of calculated mean
  */
-int find_mean(char data[], int size);
+float find_mean(unsigned char data[], int size);
 
 /**
  *
@@ -41,7 +41,7 @@ int find_mean(char data[], int size);
  *
  * @return Calculated median value from the data set
  */
-int find_median(char data[], int size);
+float find_median(unsigned char data[], int size);
 
 /**
  *
@@ -52,7 +52,7 @@ int find_median(char data[], int size);
  *
  * @return void
  */
-void print_array(char data[], int size);
+void print_array(unsigned char data[], int size);
 
 /**
  *
@@ -65,7 +65,7 @@ void print_array(char data[], int size);
  *
  * @return void
  */
-void print_statistic(int min, int max, int mean, int med);
+void print_statistic(float min, float max, float mean, float med);
 
 /**
  *
@@ -77,7 +77,7 @@ void print_statistic(int min, int max, int mean, int med);
  * @return maximum element of the dataset
  *
  */
-int find_maximum(char data[], int size);
+float find_maximum(unsigned char data[], int size);
 
 /**
  *
@@ -89,7 +89,7 @@ int find_maximum(char data[], int size);
  * @return minimum number of dataset element
  *
  */
-int find_minimum(char data[], int size);
+float find_minimum(unsigned char data[], int size);
 
 /**
  *
@@ -102,5 +102,5 @@ int find_minimum(char data[], int size);
  * @return sorted array of the dataset
  *
  */
-int sort_array(char data[], int size);
+void sort_array(unsigned char *ptr, int size);
 #endif 

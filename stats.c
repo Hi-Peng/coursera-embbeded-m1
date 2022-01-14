@@ -18,8 +18,6 @@
  * @date 2022-01-08
  *
  */
-
-
 #include <stdio.h>
 #include "stats.h"
 
@@ -35,34 +33,38 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
     /* Other Variable Declarations Go Here */
-    int mean  = 0;
-    int median = 0;
-    mean = find_mean(test, SIZE);
-    median = find_median(test, SIZE);
+    float maximum = find_maximum(test, SIZE);
+    float mean = find_mean(test, SIZE);
+    float median = find_median(test, SIZE);
+    float minimum = find_minimum(test, SIZE);
+    
     /* Statistics and Printing Functions Go Here */
     print_array(test, SIZE);
-    printf("Mean of the dataset: %d \n", mean);
-    printf("Median of the dataset: %d \n", median);
+    print_statistic(minimum, maximum, mean, median);
+    
+    printf("Sorting Array \n");
+    sort_array(test, SIZE);
+    print_array(test, SIZE);
 }
 
-void print_array(char data[], int size){
+void print_array(unsigned char data[], int size){
     printf("Data set: \n===================\n");
     for(int i = 0; i < size; i++){
-        printf("%d ", data[i]);
+        printf("%f ", (float)(data[i]));
         if(i%8==0 && i!=0)
             printf("\n");
     }
     printf("\n=========================\n");
 }
 
-void print_statistic(int min, int max, int mean, int med){
-    printf("Minimium of the dataset: %d\n", min);
-    printf("Maximum of the dataset: %d\n", max);
-    printf("Mean of the dataset: %d\n", mean);
-    printf("Median of the dataset: %d\n", med);
+void print_statistic(float min, float max, float mean, float med){
+    printf("Minimium of the dataset: %f\n", min);
+    printf("Maximum of the dataset: %f\n", max);
+    printf("Mean of the dataset: %f\n", mean);
+    printf("Median of the dataset: %f\n", med);
 }
 
-int find_mean(char data[], int size){
+float find_mean(unsigned char data[], int size){
     int mean;
     mean = 0;
 
@@ -74,23 +76,42 @@ int find_mean(char data[], int size){
 
 }
 
-int find_median(char data[], int size){
+float find_median(unsigned char data[], int size){
     if(size%2==0)
         return data[size/2];
     else
         return (data[(size-1)/2]-data[(size+1)/2])/2;
 }
 
-int find_minimum(char data[], int size){
-    
+float find_minimum(unsigned char data[], int size){
+    int minimum = data[0];
+    for(int i = 0; i<size; i++){
+        if(data[i] < minimum)
+                minimum = data[i];
+    }
+    return minimum;
 }
 
-int find_maximum(char data[], int size){
-
+float find_maximum(unsigned char data[], int size){
+    int maximum = data[0];
+    for (int i = 0; i<size; i++){
+        if(data[i]>maximum)
+                maximum = data[i];
+    }
+    return maximum;
 }
 
-int sort_array(char data[], int size){
-    
+void sort_array(unsigned char *ptr, int size){
+    unsigned char temp;
+    for(int i = 0; i<size; i++){
+        for(int j = i+1; j<size; j++){
+            if(ptr[i]<ptr[j]){
+                temp = ptr[i];
+                ptr[i] = ptr[j];
+                ptr[j] = temp;
+            }
+        }
+    }
 }
 
 
