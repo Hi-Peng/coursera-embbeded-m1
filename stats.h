@@ -9,13 +9,12 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief Containing function definition
  *
- * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Hilal Yahya 
+ * @date 08-01-2021 
  *
  */
 #ifndef __STATS_H__
@@ -26,15 +25,32 @@
 /**
  * @brief <Add Brief Description of Function Here>
  *
- * <Add Extended Description Here>
+ * @param input add data set for mean calc
+ * @param SIZE configure array size of the data set
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return Return the value of calculated mean
  */
+int find_mean(char data[], int size);
 
+/**
+ *
+ * @brief calculate median from a dataset
+ *
+ * @param input Char input for median calculation
+ * @param size Configure array size according to the data set
+ *
+ * @return Calculated median value from the data set
+ */
+int find_median(char data[], int size);
 
-#endif /* __STATS_H__ */
+/**
+ *
+ * @brief Print given array of data set
+ *
+ * @param input Char input of the data set
+ * @param size Size of the char
+ *
+ * @return void
+ */
+void print_array(char data[], int size);
+#endif 
